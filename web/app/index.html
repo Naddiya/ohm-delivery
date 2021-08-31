@@ -38,7 +38,7 @@
                 </div>
                 <hr />
             <form>
-
+            <!-- driver change status -->
             <section ng-controller="changeStatus" ng-if="loaded">
                       <h3>Driver Delivery Dashboard</h3>
                       <select ng-options="item for item in items" ng-model="selection"></select>
@@ -47,15 +47,16 @@
                       <hr/>
                       <div ng-switch on="selection">
                           <div ng-switch-when="changeStatus" ng-if="trackingId" ></div>
-                          <div ng-switch-when="REFUSED" ng-if="trackingId">
+                          <div ng-switch-when="REFUSED" ng-if="trackingId" ng-controller="refuseStatus">
                           <!-- customer message -->
                             <div class="settings">
                                 <h3>Customer reason</h3>
                                 <input
                                 required
+                                ng-model="message"
                                 type="text" >
                                 </input>
-                              <button>SEND</button>
+                              <button ng-click="sendStatus() ; sendMessage()">SEND</button>
                               <hr/>
                             </div>
                           </div>

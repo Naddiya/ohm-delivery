@@ -39,6 +39,19 @@ function serve() {
     return res.send(ohm);
   });
 
+  // update comment 
+  app.put('/ohms/tracking/update/:trackingId/comment', async function (req, res) {
+    const ohm = await Utils.getOhmByTrackingId(req.params.trackingId);
+    if (!ohm) {
+
+      return res.status(404).send('not found');
+    }
+    await Utils.updateComment(ohm, req.body.comment);
+
+
+    return res.send(ohm);
+  });
+
 
   app.listen(3000, () => console.log('listening on port 3000'));
 }

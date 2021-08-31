@@ -3,8 +3,8 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "DELIVERED",
-      "comment": null,
+      "status": "REFUSED",
+      "comment": "no thanks",
       "description": {
         "volts": 12,
         "amperes": 2
@@ -37,6 +37,50 @@
         {
           "state": "DELIVERED",
           "at": "1630443743478"
+        },
+        {
+          "state": "DELIVERED",
+          "at": "1630444886740"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630444892205"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630445558261"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630445559883"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630445629945"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630445642827"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630446046121"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630446130321"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630446232976"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630446301287"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630446347693"
         }
       ]
     },

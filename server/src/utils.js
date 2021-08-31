@@ -51,4 +51,15 @@ async function updateHistory(ohm, status) {
   return ohm;
 }
 
-module.exports = { getOhmById, getOhmByTrackingId, updateStatus, updateHistory };
+// add comment 
+async function updateComment(ohm, message) {
+
+  const comment = message;
+  console.log(message);
+  ohm.assign({ comment })
+    .write();
+
+  return ohm;
+}
+
+module.exports = { getOhmById, getOhmByTrackingId, updateStatus, updateHistory, updateComment };

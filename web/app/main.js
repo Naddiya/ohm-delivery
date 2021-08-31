@@ -30,8 +30,22 @@ angular
         })
         .catch((error) => {
           this.errorMessage = error.statusText;
+        });
+    };
+  })
+  // customer refuse message
+  .controller("refuseStatus", function ($scope, $http) {
+    $scope.sendMessage = function () {
+      let url = `/ohms/tracking/update/${this.trackingId}/comment`;
+      $http
+        .put(url, { comment: this.message })
+        .then((response) => {
+          this.newComment = response.data.comment;
+          console.log(this.newComment);
+        })
+        .catch((error) => {
+          this.errorMessage = error.statusText;
           console.log(this.errorMessage);
         });
     };
-
   });
