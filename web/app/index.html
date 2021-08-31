@@ -14,17 +14,30 @@
         </div>
         
         <div ng-app="ohm-delivery">
-            <form ng-controller="tracking" ng-submit="sendData()">
+            <form ng-controller="tracking" ng-submit="getTrackingStatus()">
                 <p>
-                    <input id="tracking" type="text" ng-model="trackingId" placeholder="Enter your tracking id"/>
+                    <input 
+                    id="tracking" 
+                    type="text" 
+                    ng-model="trackingId" 
+                    placeholder="Enter your tracking id"
+                    required
+                    />
                 </p>
-                <p>
-                    <button id="formBtn" type="submit">Submit</button>
-                </p>
-                <p>
-                    <span ng-if="errorMessage">{{errorMessage}}</span>
-                </p>
+                <div>
+                  <p>
+                    <span style="color: blue;" ng-if="trackingId">{{this.trackingStatus}}</span>
+                  </p>
+                  <p>
+                      <button id="formBtn" type="submit">Submit</button>
+                  </p>
+                  <p>
+                      <span ng-if="errorMessage">{{errorMessage}}</span>
+                  </p>
+                </div>
+                
             </form>
         </div>
+
     </body>
 </html>

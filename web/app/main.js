@@ -1,12 +1,16 @@
 angular
-    .module("ohm-delivery", [])
-    .controller("tracking", function($scope, $http) {
-        $scope.sendData = function() {
-            $http.get(`/ohms/${this.trackingId}`)
-            .then((error) => {
-                this.errorMessage = 'Oops, this website is under construction, please come back later.';
-            }, (result) => {
-                this.errorMessage = '';
-            });
-        };
-    });
+  .module("ohm-delivery", [])
+  .controller("tracking", function ($scope, $http) {
+    $scope.getTrackingStatus = function () {
+      $http
+        .get(`/ohms/tracking/${this.trackingId}`)
+        .then((response) => {
+          const trackingData = response.data;
+          this.trackingStatus = trackingData.status;
+        })
+        .catch((error) => {
+          this.errorMessage = error.statusText;
+          console.log(this.errorMessage);
+        });
+    };
+  });
