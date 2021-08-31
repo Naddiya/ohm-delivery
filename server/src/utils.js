@@ -40,4 +40,15 @@ async function updateStatus(ohm, status) {
   return ohm;
 }
 
-module.exports = { getOhmById, getOhmByTrackingId, updateStatus };
+// update history
+async function updateHistory(ohm, status) {
+
+  const currentHistory = ohm.value().history;
+  currentHistory.push({ state: status, at: Date.now() + "" });
+  ohm.assign({ history: currentHistory })
+    .write();
+
+  return ohm;
+}
+
+module.exports = { getOhmById, getOhmByTrackingId, updateStatus, updateHistory };

@@ -3,7 +3,7 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "REFUSED",
+      "status": "DELIVERED",
       "comment": null,
       "description": {
         "volts": 12,
@@ -29,6 +29,14 @@
         {
           "state": "IN_DELIVERY",
           "at": "123456789"
+        },
+        {
+          "state": "DELIVERED",
+          "at": "1630443708648"
+        },
+        {
+          "state": "DELIVERED",
+          "at": "1630443743478"
         }
       ]
     },

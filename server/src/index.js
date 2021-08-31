@@ -29,7 +29,12 @@ function serve() {
       return res.status(400).send('bad request');
     }
     const ohm = await Utils.getOhmByTrackingId(req.params.trackingId);
+    if (!ohm) {
+
+      return res.status(404).send('not found');
+    }
     await Utils.updateStatus(ohm, req.body.status);
+    await Utils.updateHistory(ohm, req.body.status);
 
     return res.send(ohm);
   });
