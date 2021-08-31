@@ -18,4 +18,5 @@ async function getOhmById(id) {
     return ohm;
 }
 
+
 module.exports = { getOhmById }
