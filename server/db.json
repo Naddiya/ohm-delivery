@@ -3,8 +3,8 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "IN_DELIVERY",
-      "comment": "no thanks",
+      "status": "DELIVERED",
+      "comment": "gfqgfg",
       "description": {
         "volts": 12,
         "amperes": 2
@@ -133,6 +133,22 @@
         {
           "state": "OK",
           "at": "1630450800756"
+        },
+        {
+          "state": "DELIVERED",
+          "at": "1630452631719"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630452729232"
+        },
+        {
+          "state": "DELIVERED",
+          "at": "1630452789885"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630452796179"
         }
       ]
     },
