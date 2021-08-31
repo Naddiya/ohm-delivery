@@ -12,7 +12,8 @@
             <h1>Ohm Delivery</h1>
             <h2>Get shocked by the power</h2>
         </div>
-        
+
+        <!-- tracking status -->
         <div ng-app="ohm-delivery">
             <form ng-controller="tracking" ng-submit="getTrackingStatus()">
                 <p>
@@ -29,25 +30,24 @@
                       <button id="formBtn" type="submit">Submit</button>
                   </p>
                   <p>
-                      <span class="status">{{trackingStatus}}</span>
+                      <span class="status" ng-if="trackingId">{{trackingStatus}}</span>
                   </p>
                   <p>
                       <span class="error" ng-if="!trackingStatus">{{errorMessage}}</span>
                   </p>
                 </div>
                 <hr />
-            </form>
+            <form>
 
-            <section ng-controller="changeStatus" >
-                  <form>
+            <section ng-controller="changeStatus" ng-if="loaded">
                       <h3>Driver Delivery Dashboard</h3>
                       <select ng-options="item for item in items" ng-model="selection"></select>
                       <tt>Status={{this.selection}}</tt>
-                      <button>Confirmer</button>
+                      <button ng-if="this.selection === 'DELIVERED'" ng-click="sendStatus()">Confirmer</button>
                       <hr/>
                       <div ng-switch on="selection">
-                          <div ng-if="trackingId" ng-switch-when="changeStatus" ></div>
-                          <div ng-switch-when="REFUSED">
+                          <div ng-switch-when="changeStatus" ng-if="trackingId" ></div>
+                          <div ng-switch-when="REFUSED" ng-if="trackingId">
                           <!-- customer message -->
                             <div class="settings">
                                 <h3>Customer reason</h3>
@@ -60,8 +60,9 @@
                             </div>
                           </div>
                       </div>
-                </form>
             </section>
+          </form>
+
         
         </div>
 

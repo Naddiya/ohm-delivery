@@ -23,6 +23,16 @@ function serve() {
     return res.send(ohm);
   });
 
+  // update ohm status
+  app.put('/ohms/tracking/update/:trackingId/status', async function (req, res) {
+    if (!req.body.status) {
+      return res.status(400).send('bad request');
+    }
+    const ohm = await Utils.getOhmByTrackingId(req.params.trackingId);
+    await Utils.updateStatus(ohm, req.body.status);
+
+    return res.send(ohm);
+  });
 
 
   app.listen(3000, () => console.log('listening on port 3000'));

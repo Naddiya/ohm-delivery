@@ -32,5 +32,12 @@ async function getOhmByTrackingId(trackingId) {
   return ohm;
 }
 
+// update status
+async function updateStatus(ohm, status) {
+  ohm.assign({ status })
+    .write();
 
-module.exports = { getOhmById, getOhmByTrackingId };
+  return ohm;
+}
+
+module.exports = { getOhmById, getOhmByTrackingId, updateStatus };
