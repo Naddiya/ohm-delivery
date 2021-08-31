@@ -34,15 +34,19 @@ async function getOhmByTrackingId(trackingId) {
 
 // update status
 async function updateStatus(ohm, status) {
-  ohm.assign({ status })
-    .write();
+  const currentStatus = ohm.value().status;
+  if (currentStatus === 'IN_DELIVERY') {
+    ohm.assign({ status })
+      .write();
 
-  return ohm;
+    return ohm;
+  } else {
+    console.log("CANNOT CHANGE STATUS");
+  }
 }
 
 // update history
 async function updateHistory(ohm, status) {
-
   const currentHistory = ohm.value().history;
   currentHistory.push({ state: status, at: Date.now() + "" });
   ohm.assign({ history: currentHistory })
@@ -53,7 +57,6 @@ async function updateHistory(ohm, status) {
 
 // add comment 
 async function updateComment(ohm, message) {
-
   const comment = message;
   console.log(message);
   ohm.assign({ comment })

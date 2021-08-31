@@ -3,7 +3,7 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "REFUSED",
+      "status": "IN_DELIVERY",
       "comment": "no thanks",
       "description": {
         "volts": 12,
@@ -81,6 +81,58 @@
         {
           "state": "REFUSED",
           "at": "1630446347693"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630449965031"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450039232"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450085298"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450221248"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450236846"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450284372"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450300099"
+        },
+        {
+          "state": "REFUSED",
+          "at": "1630450326012"
+        },
+        {
+          "state": "OK",
+          "at": "1630450424663"
+        },
+        {
+          "state": "OK",
+          "at": "1630450459201"
+        },
+        {
+          "state": "OK",
+          "at": "1630450644920"
+        },
+        {
+          "state": "OK",
+          "at": "1630450766089"
+        },
+        {
+          "state": "OK",
+          "at": "1630450800756"
         }
       ]
     },
