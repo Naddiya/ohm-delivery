@@ -26,17 +26,43 @@
                 </p>
                 <div>
                   <p>
-                    <span style="color: blue;" ng-if="trackingId">{{this.trackingStatus}}</span>
-                  </p>
-                  <p>
                       <button id="formBtn" type="submit">Submit</button>
                   </p>
                   <p>
-                      <span ng-if="errorMessage">{{errorMessage}}</span>
+                      <span class="status">{{trackingStatus}}</span>
+                  </p>
+                  <p>
+                      <span class="error" ng-if="!trackingStatus">{{errorMessage}}</span>
                   </p>
                 </div>
-                
+                <hr />
             </form>
+
+            <section ng-controller="changeStatus" >
+                  <form>
+                      <h3>Driver Delivery Dashboard</h3>
+                      <select ng-options="item for item in items" ng-model="selection"></select>
+                      <tt>Status={{this.selection}}</tt>
+                      <button>Confirmer</button>
+                      <hr/>
+                      <div ng-switch on="selection">
+                          <div ng-if="trackingId" ng-switch-when="changeStatus" ></div>
+                          <div ng-switch-when="REFUSED">
+                          <!-- customer message -->
+                            <div class="settings">
+                                <h3>Customer reason</h3>
+                                <input
+                                required
+                                type="text" >
+                                </input>
+                              <button>SEND</button>
+                              <hr/>
+                            </div>
+                          </div>
+                      </div>
+                </form>
+            </section>
+        
         </div>
 
     </body>

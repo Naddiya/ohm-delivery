@@ -1,5 +1,6 @@
 angular
   .module("ohm-delivery", [])
+  // get tracking status
   .controller("tracking", function ($scope, $http) {
     $scope.getTrackingStatus = function () {
       $http
@@ -13,4 +14,9 @@ angular
           console.log(this.errorMessage);
         });
     };
+  })
+  // driver change status
+  .controller("changeStatus", function ($scope, $http) {
+    $scope.items = ["DELIVERED", "REFUSED"];
+
   });

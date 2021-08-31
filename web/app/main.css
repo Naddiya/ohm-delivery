@@ -28,8 +28,16 @@ input {
     margin: 2em auto 1em;
     width: 50%;
 }
+
 p {
     text-align: center;
     margin: auto;
     line-height: 2.0;
+}
+
+.error {
+  color: red;
+}
+.status {
+  color: blue;
 }
