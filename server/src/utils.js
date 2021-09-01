@@ -34,14 +34,22 @@ async function getOhmByTrackingId(trackingId) {
 
 // update status
 async function updateStatus(ohm, status) {
+  const statuses = ['CREATED', 'PREPARING', 'READY', 'IN_DELIVERY', 'REFUSED', 'DELIVERED'];
+  // getting current status
   const currentStatus = ohm.value().status;
-  if (currentStatus === 'IN_DELIVERY') {
+  // getting index of current status
+  const currentPosition = statuses.indexOf(currentStatus);
+  // verifying if status is 1 position ahead in statuses array
+  if ((status === statuses[currentPosition + 1]) ||
+    // or 2 position ahed allowed for IN_DELIVERY
+    (currentStatus === 'IN_DELIVERY' && status === statuses[currentPosition + 2])) {
     ohm.assign({ status })
       .write();
 
     return ohm;
-  } else {
-    console.log("CANNOT CHANGE STATUS");
+  }
+  else {
+    console.log('INVALID STATUS');
   }
 }
 
