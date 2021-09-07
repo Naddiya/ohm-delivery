@@ -15,8 +15,8 @@
 
         <!-- tracking status -->
         <div ng-app="ohm-delivery">
-            <form ng-controller="tracking" ng-submit="getTrackingStatus()">
-                <p>
+              <form class="tracking-form" ng-controller="tracking" ng-submit="getTrackingStatus()">
+                  <p>
                     <input 
                     id="tracking" 
                     type="text" 
@@ -24,8 +24,7 @@
                     placeholder="Enter your tracking id"
                     required
                     />
-                </p>
-                <div>
+                  </p>
                   <p>
                       <button id="formBtn" type="submit">Submit</button>
                   </p>
@@ -35,38 +34,34 @@
                   <p>
                       <span class="error" ng-if="!trackingStatus">{{errorMessage}}</span>
                   </p>
-                </div>
-                <hr />
-            <form class="dashboard">
-            <!-- driver change status -->
-            <section ng-controller="changeStatus" ng-if="loaded">
-                  <div>
-                    <h3>Driver Delivery Dashboard</h3>
-                    <select ng-options="item for item in items" ng-model="selection"></select>
-                    <tt>Status={{this.selection}}</tt>
-                    <button ng-if="this.selection === 'DELIVERED'" ng-click="sendStatus()">Confirmer</button>
-                    <hr/>
-                  </div>
-                      <div ng-switch on="selection">
-                          <div ng-switch-when="changeStatus" ng-if="trackingId" ></div>
-                          <div ng-switch-when="REFUSED" ng-if="trackingId" ng-controller="refuseStatus">
-                          <!-- customer message -->
-                            <div class="settings">
-                                <h3>Customer Message</h3>
-                                <input
-                                required
-                                ng-model="message"
-                                type="text" >
-                                </input>
-                            </div>
-                            <button ng-click="sendStatus() ; sendMessage()">SEND</button>
-                          </div>
+
+              <hr />
+                      <div class="dashboard">
+                      <!-- driver change status -->
+                            <h3>Driver Delivery Dashboard</h3>
+                            <select ng-options="item for item in items" ng-model="selection"></select>
+                            <tt>Status={{this.selection}}</tt>
+                            <button ng-if="this.selection === 'DELIVERED'" ng-click="sendStatus()">CONFIRM</button>
+                            <hr/>
+                                  <!-- customer message -->
+                                  <div ng-switch on="selection">
+                                      <div ng-switch-when="changeStatus" ng-if="trackingId" >
+                                      </div>
+                                          <div ng-switch-when="REFUSED" ng-if="trackingId">
+                                            <div ng-if="this.selection === 'REFUSED'" class="settings">
+                                                  <h3>Customer Message</h3>
+                                                  <input
+                                                  required
+                                                  ng-model="message"
+                                                  type="text" >
+                                                  </input>
+                                            </div>
+                                            <button ng-click="sendStatus() ; sendMessage()">SEND</button>
+                                          </div>
+                                </div>
                       </div>
-            </section>
-          </form>
 
-        
+            </form>
         </div>
-
     </body>
 </html>

@@ -25,18 +25,21 @@ function serve() {
 
   // update ohm status
   app.put('/ohms/tracking/update/:trackingId/status', async function (req, res) {
-    if (!req.body.status) {
-      return res.status(400).send('bad request');
-    }
-    const ohm = await Utils.getOhmByTrackingId(req.params.trackingId);
-    if (!ohm) {
+    const delay = 1000;
+    setTimeout( async function getStatusAfterDelay() {
+      if (!req.body.status) {
+        return res.status(400).send('bad request');
+      }
+      const ohm = await Utils.getOhmByTrackingId(req.params.trackingId);
+      if (!ohm) {
 
-      return res.status(404).send('not found');
-    }
-    await Utils.updateStatus(ohm, req.body.status);
-    await Utils.updateHistory(ohm, req.body.status);
+        return res.status(404).send('not found');
+      }
+      await Utils.updateStatus(ohm, req.body.status);
+      await Utils.updateHistory(ohm, req.body.status);
 
-    return res.send(ohm);
+      return res.send(ohm);
+    }, delay);
   });
 
   // update comment 
@@ -52,7 +55,7 @@ function serve() {
     return res.send(ohm);
   });
 
-  
+
 
   app.listen(3000, () => console.log('listening on port 3000'));
 }

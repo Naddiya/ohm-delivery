@@ -3,8 +3,7 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "DELIVERED",
-      "comment": "gfqgfg",
+      "status": "IN_DELIVERY",
       "description": {
         "volts": 12,
         "amperes": 2
@@ -29,126 +28,6 @@
         {
           "state": "IN_DELIVERY",
           "at": "123456789"
-        },
-        {
-          "state": "DELIVERED",
-          "at": "1630443708648"
-        },
-        {
-          "state": "DELIVERED",
-          "at": "1630443743478"
-        },
-        {
-          "state": "DELIVERED",
-          "at": "1630444886740"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630444892205"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630445558261"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630445559883"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630445629945"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630445642827"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630446046121"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630446130321"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630446232976"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630446301287"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630446347693"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630449965031"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450039232"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450085298"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450221248"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450236846"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450284372"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450300099"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630450326012"
-        },
-        {
-          "state": "OK",
-          "at": "1630450424663"
-        },
-        {
-          "state": "OK",
-          "at": "1630450459201"
-        },
-        {
-          "state": "OK",
-          "at": "1630450644920"
-        },
-        {
-          "state": "OK",
-          "at": "1630450766089"
-        },
-        {
-          "state": "OK",
-          "at": "1630450800756"
-        },
-        {
-          "state": "DELIVERED",
-          "at": "1630452631719"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630452729232"
-        },
-        {
-          "state": "DELIVERED",
-          "at": "1630452789885"
-        },
-        {
-          "state": "REFUSED",
-          "at": "1630452796179"
         }
       ]
     },
