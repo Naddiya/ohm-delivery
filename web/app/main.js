@@ -24,6 +24,7 @@ angular
         .then((response) => {
           this.newTrackingStatus = response.data.status;
           console.log(this.newTrackingStatus);
+          this.delayStatus = $scope.getTrackingStatus();
         })
         .catch((error) => {
           this.errorMessage = error.statusText;

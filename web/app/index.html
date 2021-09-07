@@ -33,7 +33,7 @@
                   </p>
                   <p>
                     <!-- if there is an ID display tracking status -->
-                      <span class="status" ng-if="trackingId">{{trackingStatus}}</span>
+                      <span class="status" ng-if="trackingId" ng-model="delayStatus">{{trackingStatus}}{{delayStatus}}</span>
                   </p>
                   <p>
                     <!-- if there is an error display error -->
