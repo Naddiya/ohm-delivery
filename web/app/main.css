@@ -53,7 +53,17 @@ p {
 .status {
   color: green;
 }
+.dashboard {
+  text-align: center;
+}
 
-section {
-  text-align :center;
+.selected {
+  color:blue;
+  margin-bottom: 1rem;
+}
+
+.buttonConfirm {
+  background-color: rgb(136, 137, 199);
+  border-radius: 4px;
+  color:white;
 }

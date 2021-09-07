@@ -3,14 +3,12 @@ angular
   // get tracking status
   .controller("tracking", function ($scope, $http) {
 
-    // $scope.loaded = false;
     $scope.getTrackingStatus = function () {
       $http
         .get(`/ohms/tracking/${this.trackingId}`)
         .then((response) => {
           const trackingData = response.data;
           this.trackingStatus = trackingData.status;
-          // this.loaded = true;
         })
         .catch((error) => {
           this.errorMessage = error.statusText;
@@ -25,7 +23,6 @@ angular
         .put(url, { status: this.selection })
         .then((response) => {
           this.newTrackingStatus = response.data.status;
-          $scope.getTrackingStatus();
           console.log(this.newTrackingStatus);
         })
         .catch((error) => {

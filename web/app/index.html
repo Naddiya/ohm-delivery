@@ -15,7 +15,9 @@
 
         <!-- tracking status -->
         <div ng-app="ohm-delivery">
-              <form class="tracking-form" ng-controller="tracking" ng-submit="getTrackingStatus()">
+
+
+              <form class="tracking-form" ng-controller="tracking">
                   <p>
                     <input 
                     id="tracking" 
@@ -26,29 +28,41 @@
                     />
                   </p>
                   <p>
-                      <button id="formBtn" type="submit">Submit</button>
+                    <!-- get tracking status on button click -->
+                      <button id="formBtn" ng-click="getTrackingStatus()">Submit</button>
                   </p>
                   <p>
+                    <!-- if there is an ID display tracking status -->
                       <span class="status" ng-if="trackingId">{{trackingStatus}}</span>
                   </p>
                   <p>
+                    <!-- if there is an error display error -->
                       <span class="error" ng-if="!trackingStatus">{{errorMessage}}</span>
                   </p>
 
               <hr />
-                      <div class="dashboard">
+                  <!-- if there is a tracking status display dashboard -->
+                      <div class="dashboard" ng-if="!!trackingStatus">
                       <!-- driver change status -->
-                            <h3>Driver Delivery Dashboard</h3>
-                            <select ng-options="item for item in items" ng-model="selection"></select>
-                            <tt>Status={{this.selection}}</tt>
-                            <button ng-if="this.selection === 'DELIVERED'" ng-click="sendStatus()">CONFIRM</button>
+                            <h3 >Driver Delivery Dashboard</h3>
+                            <!-- select a status -->
+                            <select class="selected" ng-options="item for item in items" ng-model="selection"></select>
+                            <div>New Status:
+                              <!-- display the chosen status -->
+                              <div class="selected">{{this.selection}}</div>
+                            </div>
                             <hr/>
                                   <!-- customer message -->
                                   <div ng-switch on="selection">
                                       <div ng-switch-when="changeStatus" ng-if="trackingId" >
                                       </div>
-                                          <div ng-switch-when="REFUSED" ng-if="trackingId">
-                                            <div ng-if="this.selection === 'REFUSED'" class="settings">
+                                      <!-- if DELIVERED selected change Status-->
+                                          <div ng-switch-when="DELIVERED">
+                                            <button class="buttonConfirm" ng-click="sendStatus()">CONFIRM</button>
+                                          </div>
+                                      <!-- if REFUSED is selected display Customer Message -->
+                                          <div ng-switch-when="REFUSED">
+                                            <div class="settings">
                                                   <h3>Customer Message</h3>
                                                   <input
                                                   required
@@ -56,7 +70,8 @@
                                                   type="text" >
                                                   </input>
                                             </div>
-                                            <button ng-click="sendStatus() ; sendMessage()">SEND</button>
+                                            <!-- send new Status and Comment on button click -->
+                                            <button class="buttonConfirm" ng-click="sendMessage() ; sendStatus()">SEND</button>
                                           </div>
                                 </div>
                       </div>

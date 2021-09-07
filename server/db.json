@@ -3,7 +3,8 @@
     {
       "id": "0",
       "trackingId": "1e62adfe",
-      "status": "IN_DELIVERY",
+      "status": "REFUSED",
+      "comment": "NO THANKS",
       "description": {
         "volts": 12,
         "amperes": 2
